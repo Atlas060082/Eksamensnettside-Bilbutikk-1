@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bilbutikk 1 Askim - Internt system{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'biler/css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'biler:oversikt' %}">Biloversikt</a></li>
+            <li><a href="{% url 'biler:serviceoversikt' %}">Servicer</a></li>
+            <li><a href="/admin/">Admin</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
